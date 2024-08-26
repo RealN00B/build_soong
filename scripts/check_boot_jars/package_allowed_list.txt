@@ -261,6 +261,9 @@ com\.google\.i18n\.phonenumbers
 org\.chromium\.arc
 org\.chromium\.arc\..*
 
+# LMODroid adds
+com\.libremobileos\..*
+
 # NV adds
 com\.nvidia
 com\.nvidia\..*
