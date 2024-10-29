@@ -121,6 +121,11 @@ def parse_args():
   config["InfinityDesc"] = config["BuildDesc"]
   config["InfinityDevice"] = config["DeviceName"]
 
+  config["PihooksGmsFp"] = ""
+  config["PihooksGmsModel"] = ""
+  config["PihooksBuildFp"] = ""
+  config["PihooksBuildModel"] = ""
+ 
   override_config(config)
 
   append_additional_system_props(args)
@@ -246,6 +251,11 @@ def generate_build_info(args):
   print(f"ro.build.flavor={config['BuildFlavor']}")
 
   print(f"ro.infinity.device={config['InfinityDevice']}")
+  
+  print(f"persist.sys.pihooks_FINGERPRINT={config['PihooksGmsFp']}")
+  print(f"persist.sys.pihooks_MODEL={config['PihooksGmsModel']}")
+  print(f"persist.sys.pihooks_mainline_FINGERPRINT={config['PihooksBuildFp']}")
+  print(f"persist.sys.pihooks_mainline_MODEL={config['PihooksBuildModel']}")
 
   # These values are deprecated, use "ro.product.cpu.abilist"
   # instead (see below).
